@@ -1,0 +1,117 @@
+<%-include("partials/header")-%>
+<title>Notes Hub</title>
+	<link rel="stylesheet" type="text/css" href="/css/notes.css">
+<div>
+    <h1>Notes Hub</h1>
+	<div id="notes-container">
+		<div id="notes-form">
+			<h2>Add Note</h2>
+			<input type="text" id="note-title" placeholder="Title">
+			<textarea id="note-content" placeholder="Content"></textarea>
+			<button id="add-note-btn">Add Note</button>
+		</div>
+		<div id="notes-list">
+			<h2>Notes List</h2>
+			<ul id="notes-ul"></ul>
+		</div>
+	</div>
+
+
+<script>
+    const notesForm = document.getElementById('notes-form');
+const noteTitle = document.getElementById('note-title');
+const noteContent = document.getElementById('note-content');
+const addNoteBtn = document.getElementById('add-note-btn');
+const notesList = document.getElementById('notes-ul');
+
+let notes = [];
+
+// function to add a new note to the notes array and display all notes
+function addNote() {
+  const title = noteTitle.value.trim();
+  const content = noteContent.value.trim();
+  if (title !== '' && content !== '') {
+    const note = {
+      title: title,
+      content: content,
+      date: new Date().toLocaleString()
+    };
+    notes.push(note);
+    displayNotes();
+    noteTitle.value = '';
+    noteContent.value = '';
+  }
+}
+
+// function to display all notes
+function displayNotes() {
+  notesList.innerHTML = '';
+  for (let i = 0; i < notes.length; i++) {
+    const note = notes[i];
+    const noteItem = document.createElement('li');
+    const noteTitle = document.createElement('h3');
+    const noteContent = document.createElement('p');
+    const noteDate = document.createElement('span');
+    const editBtn = document.createElement('button');
+    const deleteBtn = document.createElement('button');
+    noteTitle.innerText = note.title;
+    noteContent.innerText = note.content;
+    noteDate.innerText = note.date;
+    editBtn.innerText = 'Edit';
+    editBtn.setAttribute('data-note-index', i);
+    deleteBtn.innerText = 'Delete';
+    deleteBtn.setAttribute('data-note-index', i);
+    noteItem.appendChild(noteTitle);
+    noteItem.appendChild(noteContent);
+    noteItem.appendChild(noteDate);
+    noteItem.appendChild(editBtn);
+    noteItem.appendChild(deleteBtn);
+    noteItem.classList.add('note-item');
+    notesList.appendChild(noteItem);
+  }
+}
+
+// function to edit a note
+function editNote() {
+  const noteIndex = this.getAttribute('data-note-index');
+  const note = notes[noteIndex];
+  noteTitle.value = note.title;
+  noteContent.value = note.content;
+  notes.splice(noteIndex, 1);
+  displayNotes();
+}
+
+// function to delete a note
+function deleteNote() {
+  const noteIndex = this.getAttribute('data-note-index');
+  notes.splice(noteIndex, 1);
+  displayNotes();
+}
+
+// event listener for submitting the notes form
+notesForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  addNote();
+});
+
+// event listener for editing a note
+notesList.addEventListener('click', (event) => {
+  if (event.target.tagName === 'BUTTON') {
+    const action = event.target.innerText;
+    if (action === 'Edit') {
+      editNote.call(event.target);
+    } else if (action === 'Delete') {
+      deleteNote.call(event.target);
+    }
+  }
+});
+
+// display any existing notes
+displayNotes();
+
+</script>
+
+	
+
+
+</div>

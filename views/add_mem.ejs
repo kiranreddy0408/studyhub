@@ -1,0 +1,74 @@
+<%-include("partials/header")-%>
+
+<h1>HOME</h1>
+
+
+<div>
+  <style>.member-form {
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  .member-form h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .member-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .member-form label {
+    margin-top: 10px;
+  }
+  
+  .member-form input,
+  .member-form select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 5px;
+    width: 100%;
+  }
+  
+  .member-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  .member-form button:hover {
+    background-color: #45a049;
+  }
+  </style>
+
+  <div class="member-form">
+    <h2>Add Group Members</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+  
+      <label for="role">Role:</label>
+      <select id="role" name="role" required>
+        <option value="">--Please choose an option--</option>
+        <option value="student">Student</option>
+        <option value="instructor">Instructor</option>
+      </select>
+  
+      <button type="submit">Add Member</button>
+    </form>
+  </div>
+  </div>
+  

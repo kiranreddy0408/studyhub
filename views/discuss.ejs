@@ -1,0 +1,33 @@
+<%-include("partials/header")-%>
+
+<title>Discussion Board</title>
+	<!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+
+<link rel="stylesheet" href="/css/discuss.css">
+<div>
+
+	
+	<div class="chat-container">
+		<div class="chat-header">
+			<h2>Discussion Board Chat</h2>
+		</div>
+		<div class="chat-area">
+			<ul id="chat-messages">
+			</ul>
+		</div>
+		<div class="chat-input">
+			<input type="text" id="message-box" placeholder="Type your message here...">
+			<button id="send-btn">Send</button>
+			<input type="file" id="image-file" accept="image/*" onchange="previewImage();">
+			<button id="image-btn">Image</button>
+		</div>
+		<div id="preview-image"></div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
+
+
+
+</div>

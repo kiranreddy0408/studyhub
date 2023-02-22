@@ -1,0 +1,69 @@
+<%-include("partials/header")-%>
+
+<title>Discussion Board</title>
+	<!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+
+<link rel="stylesheet" href="/css/questions.css">
+<div>
+
+	
+	<div class="question-container">
+		<div class="question-header">
+			<h2>Post a Question</h2>
+		</div>
+		<div class="question-form">
+			<label for="question">Question:</label>
+			<textarea id="question"></textarea>
+			<button id="post-btn">Post</button>
+		</div>
+		<div class="question-list">
+			<h2>Question List</h2>
+			<ul id="question-ul">
+			</ul>
+		</div>
+	</div>
+
+
+
+
+
+
+<script>
+	const questionUl = document.getElementById('question-ul');
+const questionBox = document.getElementById('question');
+const postBtn = document.getElementById('post-btn');
+
+postBtn.addEventListener('click', () => {
+  const question = questionBox.value.trim();
+  if (question !== '') {
+    const newQuestion = {
+      question: question,
+      answers: []
+    };
+    displayQuestion(newQuestion);
+    questionBox.value = '';
+  }
+});
+
+function displayQuestion(question) {
+  let questionHTML = `
+    <li>
+      <div class="question">
+        <p>${question.question}</p>
+        <button class="answer-btn" href="/discuss">Answer</button>
+      </div>
+    </li>
+  `;
+  questionUl.innerHTML += questionHTML;
+}
+const answerBtn = document.getElementById('answer-btn');
+
+answerBtn.addEventListener('click', () => {
+  window.location.href = '/views/discuss';
+});
+
+
+</script>
+
+
+</div>

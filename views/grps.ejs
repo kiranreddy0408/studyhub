@@ -1,0 +1,118 @@
+<%-include("partials/header")-%>
+
+
+
+
+
+
+
+
+<div>
+    <style>/* Feature boxes */
+
+/* Feature boxes */
+
+.feature-box {
+  background-color: green;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+ .feature-box:hover {
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
+} 
+
+.feature-box img {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.feature-box h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.feature-box p {
+  font-size: 16px;
+  margin: 0;
+  color: white;
+}
+
+/* Feature row */
+
+.feature-row {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 40px;
+}
+
+
+/* Buttons */
+
+
+
+        </style>
+
+    
+    <div class="container">
+      <div class="row feature-row">
+        <div class="col-md-4">
+          <div class="feature-box">
+            <img src="/images/question_corner.png" alt="Question Corner Icon">
+            <a href="/questions">
+                <h2>Question Corner</h2>
+            </a>
+            <p>Ask and answer questions related to your courses.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-box">
+            <a href="/discuss">
+              <img src="\images\discuss.png" alt="Discussion Board Icon">
+              <h2>Discussion Board</h2>
+              <p>Engage in course discussions with your peers.</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-box">
+            <a href="/notes">
+              <img src="/images/notes.png" alt="Notes Hub Icon">
+              <h2>Notes Hub</h2>
+              <p>Store and access your course notes anytime, anywhere.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row feature-row">
+        <div class="col-md-4">
+          <div class="feature-box">
+            <a href="/tasks">
+              <img src="/images/task_reminder.png" alt="Task Bulletin Icon">
+              <h2>Task Bulletin</h2>
+              <p>Organize and track your course tasks and deadlines.</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-box">
+            <a href="/resources">
+              <img src="/images/resources.png" alt="Resources Library Icon">
+              <h2>Resources Library</h2>
+              <p>Access a variety of course-related resources.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- <%-include("partials/footer")-%> -->

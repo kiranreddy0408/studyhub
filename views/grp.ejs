@@ -1,0 +1,20 @@
+<%-include("partials/header")-%>
+
+
+<h1>Create Group</h1>
+<form action="/grp" method="post">
+    <div class="form-group">
+        <label for="">Group Title</label>
+        <input class="form-control" type="text" name="groupTitle">
+        <label for="">Group discription</label>
+        <textarea class="form-control" name="groupBody" id="" cols="30" rows="10"></textarea>
+
+    </div>
+    
+    <button class="btngrp" type="submit" name="create">Add</button>
+</form>
+
+
+
+
+<%-include("partials/footer")-%>
